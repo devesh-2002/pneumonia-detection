@@ -1,0 +1,23 @@
+<!-- result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result:</h1>
+    
+    {% if prediction_text.0.0 > prediction_text.0.1 %}
+        <p>Result: Normal</p>
+    {% else %}
+        <p>Result: Pneumonia</p>
+    {% endif %}
+    
+    <h2>Probabilities:</h2>
+    <p>Probability of Normal: {{ prediction_text.0.0 }}</p>
+    <p>Probability of Pneumonia: {{ prediction_text.0.1 }}</p>
+</body>
+</html>
